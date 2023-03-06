@@ -9,11 +9,20 @@ var $jokeList = $("#joke-list");
 // start with an EMPTY array []
 var jokes = [];
 
+// 9 - create a function to save jokes to localStorage
+// use 'JSON.stringify' to CONVERT ARRAY data in 'jokes' to a STRING instead (because localStorage only processes data as a string)
+var saveJokes = function(){
+    console.log("save jokes");
+    localStorage.setItem("jokes", JSON.stringify(jokes));
+}
+
 // 7 - create a function to pass in the data which is going to be added to the variable array of data called 'jokes' (listed above)
 var addJoke = function(newJoke){
-    jokes.push(newJoke);
+    jokes.unshift(newJoke);
     console.log("add joke", jokes);
     updateJokesList();
+    // 9 part 2 - call the function to save jokes within this function every time a user adds a new joke
+    saveJokes();
 }
 
 // 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see (also works with step 6 - array named "jokes")
