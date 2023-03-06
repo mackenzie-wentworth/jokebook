@@ -16,6 +16,13 @@ var saveJokes = function(){
     localStorage.setItem("jokes", JSON.stringify(jokes));
 }
 
+// 10 - create a function to load our saved list when we open the page after refreshing
+var loadJokes = function(){
+    jokes = JSON.parse(localStorage.getItem("jokes"));
+    console.log("load jokes", jokes);
+    updateJokesList();
+}
+
 // 7 - create a function to pass in the data which is going to be added to the variable array of data called 'jokes' (listed above)
 var addJoke = function(newJoke){
     jokes.unshift(newJoke);
@@ -72,5 +79,7 @@ var initListeners = function(){
 $(function(){
     console.log("init");
     initListeners();
+    // 10 part 2 - call the funciton "loadJokes"
+    loadJokes();
 
 });
