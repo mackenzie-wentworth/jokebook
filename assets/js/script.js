@@ -1,6 +1,9 @@
 // 1 - begin by console.log to test javascript functionality in code
 console.log("script running");
 
+// 8 part 2 - we want to get the element id named "#joke-list" by targeting it from our html with jquery by doing the following:
+var $jokeList = $("#joke-list");
+
 // 6 - now we wanna do something with the DATA to track the jokes data, so we can create an ARRAY data type to store our collection list of jokes.
 // this will allow us to pull the jokes data from the array as needed AND update the list of data aka when we add new jokes to our collection
 // start with an EMPTY array []
@@ -12,9 +15,20 @@ var addJoke = function(newJoke){
     console.log("add joke", jokes);
     updateJokesList();
 }
-// 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see
+
+// 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see (also works with step 6 - array named "jokes")
 var updateJokesList = function(){
-    var $
+    console.log("update jokes list");
+// because we already have a good structure of the setup in our html of the related content below...
+// ...we can mimic that setup in our script.js here too by doing the following 'for loop' below with the jquery variable we created up top called "jokesHtml"
+    var jokesHtml = "";
+    for (var i=o; i<jokes.length; i++){
+        jokesHtml += '<article>';
+        jokesHtml += '<p class="setup"> '+jokes[i].setup+' </p>';
+        jokesHtml += '<p class="punchline"> '+jokes[i].punchline+' </p>';
+        jokesHtml += '</article>';
+    }
+    $jokeList.html(jokesHtml);
 }
 
 // 3 - set up event listeners (aka initialize event listeners with a function)
