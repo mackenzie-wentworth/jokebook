@@ -1,1 +1,53 @@
-console.log("script running")
+// 1 - begin by console.log to test javascript functionality in code
+console.log("script running");
+
+// 6 - now we wanna do something with the DATA to track the jokes data, so we can create an ARRAY data type to store our collection list of jokes.
+// this will allow us to pull the jokes data from the array as needed AND update the list of data aka when we add new jokes to our collection
+// start with an EMPTY array []
+var jokes = [];
+
+// 7 - create a function to pass in the data which is going to be added to the variable array of data called 'jokes' (listed above)
+var addJoke = function(newJoke){
+    jokes.push(newJoke);
+    console.log("add joke", jokes);
+    updateJokesList();
+}
+// 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see
+var updateJokesList = function(){
+    var $
+}
+
+// 3 - set up event listeners (aka initialize event listeners with a function)
+// EVENT LISTENERS are what we use to listen to and react to with what's going on with the web page
+var initListeners = function(){
+    console.log("init listeners");
+    // we want to target the <form> on html by getting the element id "new-joke" and adding a function with jquery to the submit button
+    $("#new-joke").submit( function(event){
+        event.preventDefault();
+        console.log("submitted form");
+
+        // 4 - next, we want to grab the data that is inputted into the submit form by targeting the element id "new-setup" AND "new-punchline" from html
+        var newSetup = $("#new-setup").val();
+        var newPunchline = $("#new-punchline").val();
+
+        // 5 - create an object with properties for a new joke
+        var newJoke = {
+            setup: newSetup,
+            punchline: newPunchline
+        };
+        console.log(newJoke);
+
+        // 7 part 2 - to add a NEW JOKE ITEM to the list of jokes which is stored in the array named 'jokes' above --> we need to do the following:
+        addJoke(newJoke);
+    });
+
+}
+
+
+// 2 - set up jquery function
+// To call the event listener function that we created above named 'initListeners', we need to use 'initListeners()' as seen below in the jquery function:
+$(function(){
+    console.log("init");
+    initListeners();
+
+});
