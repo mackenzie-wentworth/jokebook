@@ -1,0 +1,17 @@
+*** USE THIS TO LAY0UT GitHub ISSUES (quick easy way to layout task management of 'to-dos' in relative sequential order) ***
+
+---- MUST DO items (! means completed): 
+
+! create wireframe (with Google Slides)
+! show a list of jokes
+! show a form to add a joke to the list
+click a button to add the joke to the list
+save the list to localStorage when we change it
+load our saved list when we open the page
+click a button to fetch a random joke from the internet (aka from some API)
+populate our form with that joke
+make it pretty with css 
+
+---- MAYBE? (then below are 'maybe' items to do):
+
+click a button on any joke to remove it from the list and storage
