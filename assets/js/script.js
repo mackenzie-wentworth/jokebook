@@ -22,10 +22,10 @@ var updateJokesList = function(){
 // because we already have a good structure of the setup in our html of the related content below...
 // ...we can mimic that setup in our script.js here too by doing the following 'for loop' below with the jquery variable we created up top called "jokesHtml"
     var jokesHtml = "";
-    for (var i=o; i<jokes.length; i++){
+    for (var i=0; i<jokes.length; i++){
         jokesHtml += '<article>';
-        jokesHtml += '<p class="setup"> '+jokes[i].setup+' </p>';
-        jokesHtml += '<p class="punchline"> '+jokes[i].punchline+' </p>';
+        jokesHtml += '<p class="setup">'+jokes[i].setup+'</p>';
+        jokesHtml += '<p class="punchline">'+jokes[i].punchline+'</p>';
         jokesHtml += '</article>';
     }
     $jokeList.html(jokesHtml);
