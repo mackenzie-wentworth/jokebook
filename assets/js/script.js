@@ -32,6 +32,10 @@ var addJoke = function(newJoke){
     saveJokes();
 }
 
+// 11 part 2 - create and define function "getRandomJoke" to use by passing in the funciton into the "click" (feature shown in code later below)
+var getRandomJoke = function(){
+    console.log("get random joke");
+}
 // 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see (also works with step 6 - array named "jokes")
 var updateJokesList = function(){
     console.log("update jokes list");
@@ -70,6 +74,9 @@ var initListeners = function(){
         // 7 part 2 - to add a NEW JOKE ITEM to the list of jokes which is stored in the array named 'jokes' above --> we need to do the following:
         addJoke(newJoke);
     });
+
+    // 11 - add jquery to get element ID from HTML (id="#get-joke") and add feature to click button for ID with a function called "getRandomJoke"
+    $("#get-button").click(getRandomJoke);
 
 }
 
