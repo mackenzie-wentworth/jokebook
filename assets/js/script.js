@@ -36,6 +36,17 @@ var addJoke = function(newJoke){
     saveJokes();
 }
 
+// 14 add function to REMOVE A JOKE
+// NOTE: for the function, we are giving the parameters an 'INDEX'--> the index is used to tell WHICH JOKE TO REMOVE
+var removeJoke = function(index){
+    console.log("remove joke", index);
+    // because we are looking at an array of data (array of different joke items added to the list), we can use SPLICE to removed the specified joke 1 at a time --> so that why we do "(index, 1)" to signal removing 1 index item at a time from our array
+    jokes.splice(index, 1);
+    // call the functions we created to UPDATE OUR JOKES LIST and to SAVE JOKES
+    updateJokesList();
+    saveJokes();
+}
+
 // 11 part 2 - create and define function "getRandomJoke" to use by passing in the funciton into the "click" (feature shown in code later below)
 var getRandomJoke = function(){
     console.log("get random joke");
@@ -115,3 +126,8 @@ $(function(){
     // // 10 part 2 - call the funciton "loadJokes"
     loadJokes();
 });
+
+// 14 part 2 - create "setTimeout" to test the function we created named "removeJoke"
+setTimeout( function(){
+    removeJoke(0);
+}, 3000)
