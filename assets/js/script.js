@@ -19,6 +19,10 @@ var saveJokes = function(){
 // 10 - create a function to load our saved list when we open the page after refreshing
 var loadJokes = function(){
     jokes = JSON.parse(localStorage.getItem("jokes"));
+    // add 'if statement' to test error we recieved that was saying "load jokes null" in the console log --> to test the null results
+    if (!jokes){
+        jokes = [];
+    }
     console.log("load jokes", jokes);
     updateJokesList();
 }
