@@ -43,8 +43,21 @@ var getRandomJoke = function(){
         })
         .then( function(data){
             console.log("fetched joke", data);
+        // 13 - call a function to pass in data parameters that populates the data onto page when we fetch a random joke
+        // make sure the function targets the specific data we want to pull (aka so here we want to pull the data for SETUP and PUNCHLINE from our HTML)
+        updateForm(data.setup, data.punchline);
         });
 }
+
+// 13 part 2 - create and define function named "updateForm" AND attach jquery to get the html element named "id=new-setup"
+var updateForm = function(setup, punchline){
+    console.log("update form:" +setup+ " ... " +punchline);
+    // NOTE: the "val()" in this jquery operates differently because we are using it to SET THE VALUE of the parameter inside the () of the val that comes after "val"
+    // so in this example, we are SETTING THE VALUE of the properties "setup" and "punchline"
+    $("#new-setup").val(setup);
+    $("#new-punchline").val(punchline);
+};
+
 // 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see (also works with step 6 - array named "jokes")
 var updateJokesList = function(){
     console.log("update jokes list");
