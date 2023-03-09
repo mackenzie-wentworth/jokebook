@@ -35,6 +35,15 @@ var addJoke = function(newJoke){
 // 11 part 2 - create and define function "getRandomJoke" to use by passing in the funciton into the "click" (feature shown in code later below)
 var getRandomJoke = function(){
     console.log("get random joke");
+    // 12 - add "fetch" feature to joke API with API url to the getRandomJoke function so that we can generate a response of data from the API
+    var jokeUrl = "https://official-joke-api.appspot.com/jokes/random";
+    fetch(jokeUrl)
+        .then( function(response){
+            return response.json();
+        })
+        .then( function(data){
+            console.log("fetched joke", data);
+        });
 }
 // 8 - create a function to update our list of jokes BY ADDING THE LIST TO THE SCREEN for the user to see (also works with step 6 - array named "jokes")
 var updateJokesList = function(){

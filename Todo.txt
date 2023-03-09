@@ -8,7 +8,7 @@
 ! click a button to add the joke to the list
 ! save the list to localStorage when we change it
 ! load our saved list when we open the page
-click a button to fetch a random joke from the internet (aka from some API)
+! click a button to fetch a random joke from the internet (aka from some API)
 populate our form with that joke
 make it pretty with css 
 
