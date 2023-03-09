@@ -79,7 +79,6 @@ var initListeners = function(){
 $(function(){
     console.log("init");
     initListeners();
-    // 10 part 2 - call the funciton "loadJokes"
+    // // 10 part 2 - call the funciton "loadJokes"
     loadJokes();
-
 });
